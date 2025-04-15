@@ -3,9 +3,9 @@ from flask_cors import CORS
 from transformers import pipeline
 import os
 
-#Huu
 app = Flask(__name__)
-CORS(app)  
+
+CORS(app, resources={r"/*": {"origins": ["http://localhost:8080", "https://chatbotcreator-frontend.onrender.com"]}})
 
 qa_pipeline = pipeline("question-answering", model="deepset/roberta-base-squad2")
 

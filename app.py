@@ -3,7 +3,7 @@ from flask_cors import CORS
 from transformers import pipeline
 import os
 
-
+#Huu
 app = Flask(__name__)
 CORS(app)  
 
@@ -75,7 +75,7 @@ def chat():
         result = qa_pipeline(question=question, context=business_info)
         confidence_threshold = 0.1
         if result['score'] < confidence_threshold:
-            answer = "I'm sorry, I couldn't find a specific answer. Please contact support for further assistance."
+            answer = "I'm sorry, I couldn't find a specific answer. Please try again."
         else:
             answer = result['answer']
 
